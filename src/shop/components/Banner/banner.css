@@ -1,0 +1,48 @@
+
+.bannerContainer {
+    width: 100%;
+    height: 400px;
+    aspect-ratio: 16/9;
+    display: flex;
+    overflow: hidden;
+}
+
+.banner {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.bannerSlide  {
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: center;
+    display: flex;
+    min-width: 100%;
+}
+
+.banner_1 {
+    background:linear-gradient(to right, violet ,yellow) ;
+}
+
+.banner_2 {
+    background:linear-gradient(to right,yellow, violet ) ;
+}
+
+.banner_3 {
+    background:linear-gradient(to right, violet ,#88ff00) ;
+}
+
+.banner_4 {
+    background:linear-gradient(to right, #88ff00 ,#00ff9d) ;
+}
+
+.banner_5 {
+    background: linear-gradient(to right, #00ff9d,#a200ff );
+}
+
+.banner-slide {
+    transform: translateX(-100%);
+}

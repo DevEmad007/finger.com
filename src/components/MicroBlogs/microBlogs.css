@@ -1,0 +1,91 @@
+
+.blogs {
+    position: relative;
+    min-height: 60vh;
+}
+
+/* loding icon  */
+.blogs .jiaKmf {
+    position: absolute;
+    left:43%;
+    top: 150px;
+}
+
+.microBlog {
+    padding: 3px 6px ;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    background-color: var(--bg-one);
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.089);
+}
+
+.person {
+    margin-right: 5px;
+    border-radius: 50%;
+    border: 1px solid var(--color);
+}
+
+.personInfoContainer {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.personInfoContainer h5 {
+    color: var(--color-two);
+}
+
+.personInfoContainer span {
+    font-size: 11px;
+}
+
+.postInfo {
+    color: var(--color-two);
+    margin: 10px;
+}   
+
+.interactionContainer {
+    display: flex;
+    justify-content: space-around;   
+    border-top: .6px solid var(--color);
+}
+
+.interactionContainer > span {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.like, .comment, .share{
+    margin: 6px;
+}
+
+
+.blogDetails {
+    max-width: 900px;
+    height: 100vh;
+}
+
+.blogDetailsLayout {
+    position: relative;
+    min-height: 300px; 
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+.blogDetailsLayout > .interactionContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.notification, .chat{
+    height: 100vh;
+    display: flex;
+     justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+}

@@ -1,0 +1,82 @@
+header {
+    position: fixed;
+    top: 00;
+    left: 0 ;
+    z-index: 20;
+    width: 100%;
+    max-width: 1499px;
+    height: var(--header-height);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-one);
+    color: var(--color);
+    box-shadow: var(--header-shadow);
+}
+
+.navList, .extarnalLink {
+    display: flex;
+    list-style: none;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 550;
+    letter-spacing: .7px;
+    margin:10px  20px;
+}
+
+.darkModeContainer {
+    margin: auto;
+}
+
+.darkModeToggleContainer {
+    display: flex;
+    background-color: var(--bg-one);
+    border: none;
+    outline: none;
+    cursor: pointer; 
+    margin: 12px;
+    font-size: 17px;
+    font-weight: 550;
+}
+
+.navIcon {
+    font-size: 10px;
+    margin: 4px;
+}
+
+.contentPusher {
+    margin-top: var(--header-height);
+}
+
+.carticon {
+    position: relative;
+    z-index: 20;
+}
+
+.carticon .cartCount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    color: black;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    z-index: 20;
+}
+
+.cartCount::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: rgb(1, 255, 128);
+    position: absolute;
+    z-index: -1;
+}

@@ -1,0 +1,55 @@
+.adminDashBoard {
+    width: clamp(220px,100%,600px);
+    margin-top: 20px;
+    color: var(--color-two);
+    background-color: var(--bg-one);
+    border-radius: 4px;
+}
+
+.adminDashBoard .itemContainer {
+    position: relative;
+}
+
+.adminDashBoard .itemContainer .jiaKmf {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+}
+
+.adminDashBoard .itemContainer .item {
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.adminDashBoard .itemContainer .item > div:first-child {
+    display: flex;
+    gap: 10px;
+}
+
+.adminDashBoard .itemContainer .item .dashboardImage {
+    height:60px;
+    width: 80px;
+    object-position: center;
+    object-fit: cover;
+}
+
+.adminDashBoard .itemContainer .item:not(:last-child){
+    border-bottom: 1.5px solid var(--color);
+}
+
+.adminDashBoard .itemContainer .item >div p{
+    padding: 8px;
+}
+
+.itemContainer .item > div >.btnContainer button{
+    padding: 3px 6px;
+    margin: 0 4px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}

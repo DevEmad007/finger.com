@@ -1,0 +1,11 @@
+.tranding {
+    padding: 20px;
+}
+
+.cardContainer {
+    padding:10px 4px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}

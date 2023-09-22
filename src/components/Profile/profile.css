@@ -1,0 +1,160 @@
+
+.profile {
+    position: relative;
+    height: 100vh;
+    background-color: var(--bg-two);
+    color: var(--color);
+}
+
+.profile .jiaKmf {
+    position: absolute;
+    left:43%;
+    top: 150px;
+    color: gray;
+}
+
+.profileDisplayContainer {
+    margin: 20px 20px 0px 20px;
+    display: flex;
+    padding: 20px;
+}
+
+.profileImgContainer {
+    height: 100px;
+    width: 100px;
+    margin-right: 15px;
+    display: grid;
+    place-items: center;
+}
+
+.profileImgContainer .uploadImage {
+    padding: 2px 6px;
+    margin-top: -14px;
+    background-color: var(--bg-one);
+    border-radius: 3px;
+    border: 1px solid var(--color);
+    cursor: pointer;
+}
+
+.profileImg {
+    border-radius: 50%;
+    width: 113px;
+    height: 113px;
+    object-fit: cover;
+}
+
+.profileDisplayInfoContainer {
+    padding: 15px;
+    margin-right: auto;
+}
+
+.profileDisplayInfoContainer input {
+    padding: 2px 4px;
+    font-size: 22px;
+    font-weight: 780;
+    color: var(--color-two);
+    background-color: var(--bg-one);
+    outline: none;
+    border: 1px solid var(--color);
+    border-radius: 4px;
+}
+
+.profileInfo {
+    margin:  0 20px;
+}
+
+.profileInfoItem {
+    background-color: var(--bg-one);
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid var(--color);
+    border-radius: 4px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profileInfoItem > input {
+    background-color: var(--bg-one);
+    border: none;
+    border-left: 1px solid var(--color);
+    outline: none;
+}
+
+.profileInfoItem::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--bg-one);
+    transform: translateY(12px);
+}
+
+.profileInfoItem > * {
+    padding: 8px;
+    color: var(--color-two);
+}
+
+.profileInfoItem > span,
+.selectionContainer > span {
+    font-weight: 750;
+    letter-spacing: 1px;
+}
+
+.selectionContainer {
+    color: var(--color-two);
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid var(--color);
+    margin: 20px;
+    padding: 8px;
+    background-color: var(--bg-one);
+    display: flex;
+    justify-content: space-between;
+}
+
+.selectionContainer > select {
+    width: 200px;
+    margin: -9px;
+    background-color: transparent;
+    border:1px solid var(--color);
+    color: var(--color-two);
+}
+
+.selectionContainer > select option {
+    background-color: var(--bg-one);
+    color: var(--color-two);
+}
+
+.logOut {
+    margin: 20px;
+    margin-left: 40px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    color: white;
+    font-size: 16px;
+    background-color: rgb(14, 123, 248);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profileEditBtn {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profileEditBtn button{
+    font-size: 14px;
+    font-weight: 550;
+    outline: none;
+    padding: 4px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
