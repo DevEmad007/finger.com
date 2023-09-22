@@ -27,7 +27,7 @@ function MicroBlogLayout({ blogitem,blogId }) {
                     </div>
                 </Link>
                 <div className="interactionContainer">
-                    <Like />
+                    <Like blogId={blogId} />
                     <span><Comment
                         sx={{ width: '12pxpx',height: '12pxpx' }}
                         className='comment' />Comment</span>
