@@ -19,7 +19,7 @@ const NewMicroBlog = ({ setRunEffect,runEffect }) => {
     const handlePostInpute = (e) => {
         setNewBlog(e.target.value);
     };
-    console.log(queryData);
+
     const handlePost = async (e) => {
         e.preventDefault();
         if (!userLogedIn) {

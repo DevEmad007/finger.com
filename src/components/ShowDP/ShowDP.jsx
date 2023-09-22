@@ -3,7 +3,7 @@ import useDownloadData from '../../hooks/downloadData/useDownloadData';
 
 const ShowImage = ({ imgRef,classname }) => {
     const { downloadedData: image,message } = useDownloadData(imgRef);
-    console.log(image);
+
     return (
         <>
             {image === undefined ?
