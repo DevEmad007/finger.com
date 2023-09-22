@@ -3,10 +3,12 @@ import Card from '../Card';
 import useGetData from '../../../hooks/getData/useGetData';
 import { RotatingLines } from 'react-loader-spinner';
 import './tranding.css';
+import { useAuth } from '../../../hooks/auth/useAuth';
 
-const Tranding = () => {
+const Trending = () => {
     const type = 'product';
     const { gettingData,data } = useGetData(type);
+    const { userLogedIn,user } = useAuth();
     return (
         <>
             <div className="tranding">
@@ -20,11 +22,11 @@ const Tranding = () => {
                             width="56"
                             visible={true} />
                         :
-                        <Card data={data} />}
+                        <Card data={data} user={user} />}
                 </div>
             </div>
         </>
     );
 };
 
-export default Tranding;
+export default Trending;
