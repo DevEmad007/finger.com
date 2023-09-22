@@ -19,7 +19,17 @@
     box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.089);
 }
 
+.personDP {
+    margin-right: 5px;
+    border-radius: 50%;
+    border: 1px solid var(--color);
+    width: 36px;
+    height: 36px;
+}
+
 .person {
+    width: 36px;
+    height: 36px;
     margin-right: 5px;
     border-radius: 50%;
     border: 1px solid var(--color);

@@ -1,5 +1,6 @@
 import { Comment,Favorite,Person,Share } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import ShowDP from '../ShowDP/ShowDP';
 
 function MicroBlogLayout({ blogitem,blogId }) {
 
@@ -10,7 +11,8 @@ function MicroBlogLayout({ blogitem,blogId }) {
             <div className="microBlog">
                 <div className="personInfoContainer">
                     <Link className='globleLinkStyle' to={`/profile/${userid}`}>
-                        <Person sx={{ width: '30px',height: '30px' }} className='person' />
+                        <ShowDP classname={'personDP'} imgRef={`profileIMG/${userid}`} />
+                        {/* <Person sx={{ width: '30px',height: '30px' }} className='person' /> */}
                     </Link>
                     <div>
                         <Link className='globleLinkStyle' to={`/profile/${userid}`}>
