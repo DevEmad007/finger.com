@@ -1,5 +1,5 @@
 import Banner from '../Banner/Banner';
-import Tranding from '../Tranding';
+import Trending from '../Tranding';
 import './shop.css';
 
 function Shop() {
@@ -7,7 +7,7 @@ function Shop() {
     return (
         <div className='shop'>
             <Banner />
-            <Tranding />
+            <Trending />
         </div>
     );
 }
