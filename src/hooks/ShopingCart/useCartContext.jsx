@@ -3,6 +3,7 @@ import useSkipFirstRender from '../SkipRender/useSkipFirstRender';
 import useQueryData from '../queryData/useQueryData';
 import { useAuth } from '../auth/useAuth';
 import useSetData from '../useSetData/useSetData';
+import { useNavigate } from 'react-router-dom';
 
 export const ShoppingCart = createContext();
 
@@ -13,19 +14,23 @@ export const useCartContext = () => {
 export const ShoppingCartProvider = ({ children }) => {
     const type = 'shopping Cart';
     const ls = window.localStorage;
-    const { user } = useAuth();
+    const { user,userLogedIn } = useAuth();
     const { sentDataById } = useSetData();
     const { gettingQueryData,queryData } = useQueryData(type,user?.uid);
     const localStorageList = useRef();
     const [ count,setCount ] = useState(0);
     const [ products,setProducts ] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
+        if (!userLogedIn) {
+            return;
+        }
         if (
             ls.getItem(`user${user?.uid}`) !== null || undefined &&
             ls.getItem(`user${user?.uid}`)?.length >= 0
         ) {
-            localStorageList.current = JSON.parse(ls.getItem(`user${user.uid}`));
+            localStorageList.current = JSON.parse(ls.getItem(`user${user?.uid}`));
         }
         if (
             ls.getItem(`user${user?.uid}`) === null || undefined
@@ -59,6 +64,10 @@ export const ShoppingCartProvider = ({ children }) => {
     };
 
     const addToCart = (id,price) => {
+        if (!userLogedIn) {
+            navigate('/login');
+            return;
+        }
         setProducts(curr => {
             if (!curr.find(item => item.id === id)) {
                 return [ ...curr,{ id: id,quantity: 1,price: price * 1,checked: false } ];
