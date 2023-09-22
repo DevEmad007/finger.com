@@ -1,4 +1,4 @@
-import { getFirestore,doc,updateDoc,arrayUnion } from "firebase/firestore";
+import { getFirestore,doc,updateDoc,arrayUnion,arrayRemove } from "firebase/firestore";
 import { collection,query,where,getDocs } from "firebase/firestore";
 import { Favorite,FavoriteBorderOutlined,FavoriteOutlined } from '@mui/icons-material';
 import useSetData from '../../hooks/useSetData/useSetData';
@@ -82,9 +82,10 @@ const Like = ({ blogId }) => {
         if (isLiked) {
             // Atomically remove a region from the "regions" array field.
             try {
-                await updateDoc(washingtonRef,{
-                    regions: arrayRemove(user?.uid)
+                await updateDoc(docRef,{
+                    likedIDs: arrayRemove(user?.uid)
                 });
+                setIsLiked(false);
                 setNewQueryReq(i => i + 1);
             } catch (error) {
                 console.log(error);
