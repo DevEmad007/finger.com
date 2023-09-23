@@ -17,7 +17,7 @@ const NavAuthLinks = () => {
 
     return (
         <>
-            <li className='globleLinkStyle navLink' onClick={handleTheme}>
+            <li className='globleLinkStyle navLink darkModeToggleContainer' onClick={handleTheme}>
                 {!darkMode ?
                     (<><ToggleOffTwoTone className="darkModeToggle" />Dark</>)
                     :
@@ -25,7 +25,7 @@ const NavAuthLinks = () => {
             </li >
             {
                 path === '/shop' &&
-                <li>
+                <li className="cartlink">
                     <CartIcon />
                 </li>
             }

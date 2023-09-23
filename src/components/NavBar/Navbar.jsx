@@ -9,7 +9,7 @@ function Navbar() {
         <>
             <header>
                 <h2>
-                    <Link className='globleLinkStyle' to={'/'}>
+                    <Link className='globleLinkStyle websiteLogo' to={'/'}>
                         Finger.Com
                     </Link>
                 </h2>
@@ -17,22 +17,26 @@ function Navbar() {
                     <ul className='navList'>
                         <li>
                             <Link className='globleLinkStyle navLink' to='/'>
-                                <Home className='navIcon' />Home
+                                <Home className='navIcon' />
+                                <span>Home</span>
                             </Link>
                         </li>
                         <li>
                             <Link className='globleLinkStyle navLink' to='/notification'>
-                                <Notifications className='navIcon' /> Notice
+                                <Notifications className='navIcon' />
+                                <span>Notice</span>
                             </Link>
                         </li>
                         <li>
                             <Link className='globleLinkStyle navLink' to='/messages'>
-                                <ChatBubble className='navIcon' />Chat
+                                <ChatBubble className='navIcon' />
+                                <span> Chat </span>
                             </Link>
                         </li>
                         <li>
                             <Link className='globleLinkStyle navLink' to='/shop'>
-                                <ShopTwo className='navIcon' />Shop
+                                <ShopTwo className='navIcon' />
+                                <span> Shop</span>
                             </Link>
                         </li>
                     </ul>
