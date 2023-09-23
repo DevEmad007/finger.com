@@ -1,13 +1,32 @@
 import { ChatBubble,Home,Notifications,ShopTwo } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import NavAuthLinks from './NavAuthLinks';
+import { useEffect,useRef,useState } from 'react';
 import './Navbar.css';
 
 function Navbar() {
+    const [ isScrolled,setIsScrolled ] = useState(false);
+    const prevScrollY = useRef();
+
+    useEffect(() => {
+        prevScrollY.current = scrollY;
+        window.addEventListener('scroll',handleScroll);
+        return () => {
+            window.removeEventListener('scroll',handleScroll);
+        };
+    },[]);
+
+    const handleScroll = () => {
+        if (window.scrollY - prevScrollY.current > 100) {
+            setIsScrolled(true);
+        } else {
+            setIsScrolled(false);
+        }
+    };
 
     return (
         <>
-            <header>
+            <header className={`${isScrolled ? 'hidden' : ''}`}>
                 <h2>
                     <Link className='globleLinkStyle websiteLogo' to={'/'}>
                         Finger.Com

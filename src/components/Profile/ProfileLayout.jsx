@@ -23,7 +23,7 @@ function ProfileLayout({ profileData,uidAsParam }) {
                 <div className="profileEdit">
                     {
                         uidAsParam.profileID === user.uid &&
-                        <Link to={`/profile/edit/${user.uid}`} className='globleLinkStyle'><Edit /></Link>
+                        <Link to={`/profile/edit/${user.uid}`} className='globleLinkStyle editlink'><Edit /></Link>
                     }
                 </div>
             </div>

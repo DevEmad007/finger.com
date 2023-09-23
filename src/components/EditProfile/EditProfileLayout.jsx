@@ -37,7 +37,7 @@ const EditProfileLayout = ({ profileData,user }) => {
             <form className='profileDisplayContainer'>
                 <div className="profileImgContainer">
                     <ShowImage classname={"profileImg"} imgRef={inputs?.imgURL} />
-                    <label htmlFor="uploadImage" className='uploadImage'>Change</label>
+                    <label htmlFor="uploadImage" className='uploadImage'>Change Photo</label>
                     <input hidden id='uploadImage' required className="imgUpload" type="file" accept="image/*" onChange={handleFileChange} />
                 </div>
                 <div className='profileDisplayInfoContainer'>
@@ -47,18 +47,7 @@ const EditProfileLayout = ({ profileData,user }) => {
                         type="text" />
                     <p>{user?.email}</p>
                 </div>
-                <div className="profileEditBtn">
-                    <button
-                        onClick={() => navigate(`/profile/${user.uid}`)}
-                        className='globleLinkStyle'>
-                        cancle
-                    </button>
-                    <button
-                        onClick={handleSave}
-                        className='globleLinkStyle'>
-                        Save
-                    </button>
-                </div>
+
             </form>
             <form className='profileInfo'>
                 <div className="profileInfoItem">
@@ -90,6 +79,18 @@ const EditProfileLayout = ({ profileData,user }) => {
                     </select>
                 </div>
             </form>
+            <div className="profileEditBtns">
+                <button
+                    onClick={() => navigate(`/profile/${user.uid}`)}
+                    className='globleLinkStyle'>
+                    cancle
+                </button>
+                <button
+                    onClick={handleSave}
+                    className='globleLinkStyle'>
+                    Save
+                </button>
+            </div>
         </div >
     );
 };

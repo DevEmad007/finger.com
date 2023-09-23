@@ -65,3 +65,10 @@
     cursor: pointer;
     margin-left: auto;
 }
+
+@media (max-width: 768px) {
+    .adminFormContainer {
+        padding-top: 25px;
+        flex-wrap: wrap-reverse;
+    }
+}

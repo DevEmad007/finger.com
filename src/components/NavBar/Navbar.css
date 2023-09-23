@@ -13,6 +13,11 @@ header {
     background-color: var(--bg-one);
     color: var(--color);
     box-shadow: var(--header-shadow);
+    transition: transform 0.3s ease-in-out;
+}
+
+header.hidden {
+    transform: translateY(-100%);
 }
 
 .navList, .extarnalLink {
@@ -86,7 +91,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        padding: 0;
+        padding: -1;
     }
 
     .websiteLogo {
@@ -97,8 +102,8 @@ header {
         width: 100%;
         display: flex;
         justify-content: space-evenly;
-        margin:0px;
-        padding: 0px;
+        margin:auto;
+        padding: auto;
         list-style: none;
     }
 
@@ -128,6 +133,9 @@ header {
         background-color: var(--bg-two);
         border: 3px solid var(--color);
         border-radius: 50%;
+        transition: 0.1s ;
+        transition: transform 0.3s none, opacity 0.3s none;
+        z-index: 0;
     }
     
     .darkModeToggleContainer {
