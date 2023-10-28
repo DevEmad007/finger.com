@@ -2,7 +2,6 @@ header {
     position: fixed;
     top: 0;
     left: 0 ;
-    z-index: 20;
     width: 100%;
     max-width: 1499px;
     height: var(--header-height);
@@ -13,25 +12,58 @@ header {
     background-color: var(--bg-one);
     color: var(--color);
     box-shadow: var(--header-shadow);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 350ms ease-out;
+    z-index: 20;
 }
 
 header.hidden {
     transform: translateY(-100%);
 }
 
-.navList, .extarnalLink {
-    display: flex;
-    list-style: none;
+.websiteLogo {
+    position: fixed;
+    top: 4px;
+    left: 10px;
+    padding: 0;
+    font-size: 32px;
+    letter-spacing: 0.03rem;
+    height: var(--header-height);
 }
 
-.navLink {
+header .extarnalLink {
+    position: absolute;
+    top: 0px;
+    right: 26px;
+    height: var(--header-height);
     display: flex;
     align-items: center;
-    font-size: 15px;
+    gap: 20px;
+}
+
+header > nav {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-one);
+    transition: transform 400ms ease-out;
+}
+
+.navList {
+    display: flex;
+    align-items: center;
+}
+
+.navList .navLink{
+    margin: 0 24px;
+    font-size: 17px;
     font-weight: 550;
-    letter-spacing: .7px;
-    margin:10px  20px;
+}
+
+.navLink{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .darkModeContainer {
@@ -47,11 +79,6 @@ header.hidden {
     margin: 12px;
     font-size: 17px;
     font-weight: 550;
-}
-
-.navIcon {
-    font-size: 10px;
-    margin: 4px;
 }
 
 .contentPusher {
@@ -87,44 +114,69 @@ header.hidden {
 }
 
 @media (max-width: 768px) {
+    header.hidden {
+        background-color: transparent;
+        transform:none;
+    }
+    
+    nav.hidden {
+        transform:translateY(110%);
+    }
+
     header {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        padding: -1;
+        top: auto;
+        bottom: 0;
+        padding: 0;
+        justify-content: center;
+    }
+
+    header > nav {
+        display: grid;
+        grid-template-columns: 60% 40%;
     }
 
     .websiteLogo {
-        display: none;
-    }
-
-    .navList{
-        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         display: flex;
-        justify-content: space-evenly;
-        margin:auto;
-        padding: auto;
-        list-style: none;
-    }
-
-    .extarnalLink {
-        display: flex;
+        justify-content: flex-start;
         align-items: center;
+        padding: 0 16px;
+        font-size: 32px;
+        letter-spacing: 0.03rem;
+        background-color: var(--bg-one);
+        height: var(--header-height);
     }
 
-    .navIcon {
-        font-size: 10px;
-        margin: 0px;
+    header .extarnalLink {
+        position: relative;
+        right: 0px;
+        height: var(--header-height);
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 0;
+    }
+
+    header .navList {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 0;
+    }
+
+    header .navLink > span {
+        display: none;   
     }
     
-    .navLink > span {
-        display: none;
+    .navList .navLink  {
+        margin: 0;
     }
 
     .cartlink {
         position: fixed;
-        bottom: 10px;
-        right: 10px;
+        bottom: 80px;
+        right: 16px;
         display: flex;
         justify-content: center;
         align-items: center;

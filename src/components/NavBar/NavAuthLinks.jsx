@@ -16,7 +16,7 @@ const NavAuthLinks = () => {
     };
 
     return (
-        <>
+        <ul className='extarnalLink'>
             <li className='globleLinkStyle navLink darkModeToggleContainer' onClick={handleTheme}>
                 {!darkMode ?
                     (<><ToggleOffTwoTone className="darkModeToggle" />Dark</>)
@@ -39,11 +39,12 @@ const NavAuthLinks = () => {
                     :
                     (<li>
                         <Link className='globleLinkStyle navLink' style={{ display: 'flex',alignItems: 'center' }} to='/login'>
-                            Log In <Login className="navIcon" />
+                            Log In
+                            <Login className="navIcon" />
                         </Link>
                     </li>)
             }
-        </>
+        </ul>
     );
 };
 

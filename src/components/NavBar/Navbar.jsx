@@ -5,64 +5,90 @@ import { useEffect,useRef,useState } from 'react';
 import './Navbar.css';
 
 function Navbar() {
+    // const [ isScrolled,setIsScrolled ] = useState(false);
+    // const prevScrollY = useRef();
+
+    // useEffect(() => {
+    //     prevScrollY.current = scrollY;
+    //     window.addEventListener('scroll',handleScroll);
+    //     return () => {
+    //         window.removeEventListener('scroll',handleScroll);
+    //     };
+    // },[]);
+
+    // const handleScroll = () => {
+    //     if (window.scrollY - prevScrollY.current > 100) {
+    //         setIsScrolled(true);
+    //     } else {
+    //         setIsScrolled(false);
+    //     }
+    // };
+
+    const [ show,setShow ] = useState(true);
+    const [ lastScrollY,setLastScrollY ] = useState(0);
     const [ isScrolled,setIsScrolled ] = useState(false);
-    const prevScrollY = useRef();
-
-    useEffect(() => {
-        prevScrollY.current = scrollY;
-        window.addEventListener('scroll',handleScroll);
-        return () => {
-            window.removeEventListener('scroll',handleScroll);
-        };
-    },[]);
-
-    const handleScroll = () => {
-        if (window.scrollY - prevScrollY.current > 100) {
-            setIsScrolled(true);
-        } else {
-            setIsScrolled(false);
+    const controlNavbar = () => {
+        if (typeof window !== 'undefined') {
+            if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
+                setShow(false);
+                setIsScrolled(true);
+            } else { // if scroll up show the navbar
+                setShow(true);
+                setIsScrolled(true);
+            }
+            // remember current page location to use in the next move
+            setLastScrollY(window.scrollY);
         }
     };
 
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.addEventListener('scroll',controlNavbar);
+
+            // cleanup function
+            return () => {
+                window.removeEventListener('scroll',controlNavbar);
+            };
+        }
+    },[ lastScrollY ]);
+
     return (
         <>
-            <header className={`${isScrolled ? 'hidden' : ''}`}>
-                <h2>
-                    <Link className='globleLinkStyle websiteLogo' to={'/'}>
+            <header className={`${!show ? 'hidden' : ''}`}>
+                <h2 className='websiteLogo'>
+                    <Link className='globleLinkStyle ' to={'/'}>
                         Finger.Com
                     </Link>
                 </h2>
-                <nav>
+                <nav className={`${!show ? 'hidden' : ''}`}>
                     <ul className='navList'>
                         <li>
                             <Link className='globleLinkStyle navLink' to='/'>
-                                <Home className='navIcon' />
+                                <Home sx='navIcon' />
                                 <span>Home</span>
                             </Link>
                         </li>
                         <li>
                             <Link className='globleLinkStyle navLink' to='/notification'>
-                                <Notifications className='navIcon' />
+                                <Notifications sx='navIcon' />
                                 <span>Notice</span>
                             </Link>
                         </li>
                         <li>
                             <Link className='globleLinkStyle navLink' to='/messages'>
-                                <ChatBubble className='navIcon' />
+                                <ChatBubble sx='navIcon' />
                                 <span> Chat </span>
                             </Link>
                         </li>
                         <li>
                             <Link className='globleLinkStyle navLink' to='/shop'>
-                                <ShopTwo className='navIcon' />
+                                <ShopTwo sx='navIcon' />
                                 <span> Shop</span>
                             </Link>
                         </li>
                     </ul>
-                </nav>
-                <ul className='extarnalLink'>
                     <NavAuthLinks />
-                </ul>
+                </nav>
             </header>
             <div className='contentPusher'></div>
         </>
