@@ -38,7 +38,7 @@
 .personInfoContainer {
     display: flex;
     align-items: center;
-    margin: 5px;
+    margin: 10px;
 }
 
 .personInfoContainer h5 {
@@ -74,11 +74,14 @@
 
 
 .blogDetails {
-    max-width: 900px;
     height: 100vh;
+    padding: 8px;
+    background-color: var(--bg-one);
+    color: var(--color);
 }
 
 .blogDetailsLayout {
+    max-width: 790px;
     position: relative;
     min-height: 300px; 
     border: 1px solid gray;

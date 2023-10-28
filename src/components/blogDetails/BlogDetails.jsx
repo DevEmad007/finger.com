@@ -13,7 +13,7 @@ const BlogDetails = () => {
             {!gettingData && blogs.filter(b => {
                 return b.id == blogId.blogId;
             }).map((blog) => {
-                return <BlogDetailsLayout blogitem={blog} blogId={blog.id} />;
+                return <BlogDetailsLayout key={blog.id} blogitem={blog} blogId={blog.id} />;
             })}
         </div>
     </>
