@@ -31,15 +31,17 @@ const NavAuthLinks = () => {
             }
             {
                 userLogedIn ?
-                    (<li>
+                    (<li >
                         <Link className='globleLinkStyle navLink' to={`/profile/${user.uid}`}>
                             <PersonOutlineRounded className="navIcon" />
                         </Link>
                     </li>)
                     :
                     (<li>
-                        <Link className='globleLinkStyle navLink' style={{ display: 'flex',alignItems: 'center' }} to='/login'>
-                            Log In
+                        <Link className='globleLinkStyle ' style={{ display: 'flex',alignItems: 'center',flexDirection: 'column' }} to='/login'>
+                            <span style={{ fontWeight: '700' }}>
+                                Log In
+                            </span>
                             <Login className="navIcon" />
                         </Link>
                     </li>)

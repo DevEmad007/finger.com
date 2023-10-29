@@ -5,25 +5,6 @@ import { useEffect,useRef,useState } from 'react';
 import './Navbar.css';
 
 function Navbar() {
-    // const [ isScrolled,setIsScrolled ] = useState(false);
-    // const prevScrollY = useRef();
-
-    // useEffect(() => {
-    //     prevScrollY.current = scrollY;
-    //     window.addEventListener('scroll',handleScroll);
-    //     return () => {
-    //         window.removeEventListener('scroll',handleScroll);
-    //     };
-    // },[]);
-
-    // const handleScroll = () => {
-    //     if (window.scrollY - prevScrollY.current > 100) {
-    //         setIsScrolled(true);
-    //     } else {
-    //         setIsScrolled(false);
-    //     }
-    // };
-
     const [ show,setShow ] = useState(true);
     const [ lastScrollY,setLastScrollY ] = useState(0);
     const [ isScrolled,setIsScrolled ] = useState(false);

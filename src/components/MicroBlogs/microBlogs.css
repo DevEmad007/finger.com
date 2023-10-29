@@ -75,7 +75,7 @@
 
 .blogDetails {
     height: 100vh;
-    padding: 8px;
+    padding:8px 16px;
     background-color: var(--bg-one);
     color: var(--color);
 }

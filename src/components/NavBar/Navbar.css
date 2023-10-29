@@ -133,6 +133,7 @@ header > nav {
     header > nav {
         display: grid;
         grid-template-columns: 60% 40%;
+        border-top: 0.06rem solid gray;
     }
 
     .websiteLogo {
@@ -148,6 +149,7 @@ header > nav {
         letter-spacing: 0.03rem;
         background-color: var(--bg-one);
         height: var(--header-height);
+        border-bottom: 0.07rem solid gray;
     }
 
     header .extarnalLink {
@@ -195,6 +197,12 @@ header > nav {
         flex-direction:column-reverse;
         font-size: 14px;
         font-weight: 700;
+        margin: 0;
+    }
+
+    .carticon .cartCount {
+        top: -8px;
+        right: -7px;
     }
     
   }
