@@ -21,12 +21,19 @@ import AddProduct from './shop/Admin/AddProduct';
 import DashBoard from './shop/Admin/DashBoard';
 import OrderTrack from './shop/Admin/orderTracker/OrderTrack';
 import Checkout from './shop/components/Checkout/Checkout';
+import { ToastContainer,toast } from 'react-toastify';
+import useSkipFirstRender from './hooks/SkipRender/useSkipFirstRender';
 
 function App() {
     const { darkMode } = useThemeContext();
-    const { userLogedIn,user } = useAuth();
+    const { userLogedIn,user,message } = useAuth();
+
+    useSkipFirstRender(() => {
+        toast(message);
+    },message);
     return (
         <div className='app' data-theme={darkMode ? ('dark') : ('light')}>
+            <ToastContainer />
             <Routes>
                 <Route path='/' element={<SharedLayout />}>
                     <Route index element={<Home />}></Route>

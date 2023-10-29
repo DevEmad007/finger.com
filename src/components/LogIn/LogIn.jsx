@@ -3,6 +3,8 @@ import React,{ useContext,useRef } from 'react';
 import { useAuth } from '../../hooks/auth/useAuth';
 import { Link } from 'react-router-dom';
 import './login.css';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function LogIn() {
     const { signInWithGgl,authLogIn } = useAuth();
@@ -21,7 +23,7 @@ function LogIn() {
     return (
         <div className='LogIn'>
             <div className="formContainer">
-                <h2>Log in Here</h2>
+                <h2 onClick={() => toast('GG')}>Log in Here</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="inputContainer">
                         <label htmlFor="User name or email">E-mail</label>

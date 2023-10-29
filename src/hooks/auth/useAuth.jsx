@@ -17,6 +17,7 @@ export const useAuth = () => {
 };
 
 export const AuthContext = ({ children }) => {
+    const [ message,setMessage ] = useState('');
     const [ user,setUser ] = useState(null);
     const [ userLogedIn,setUserLogedIn ] = useState();
     //this state can't have any default value just to update in checkAuthStatus either way if user signed in or not
@@ -62,10 +63,12 @@ export const AuthContext = ({ children }) => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
+                setMessage('Log In Successfull');
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                setMessage(errorMessage);
                 console.log(errorMessage);
             });
     };
@@ -74,7 +77,9 @@ export const AuthContext = ({ children }) => {
         signOut(auth)
             .then(() => {
                 navigate('/');
+                setMessage('Log Out Success');
             }).catch((error) => {
+                setMessage('Log Out Failed');
                 console.log(error.message);
             });
     };
@@ -87,8 +92,10 @@ export const AuthContext = ({ children }) => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
+                setMessage('Log Out Success');
                 // navigate(`/profile/edit/${user.uid}`);
             }).catch((error) => {
+                setMessage('Log Out Failed');
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 const email = error.customData.email;
@@ -102,7 +109,8 @@ export const AuthContext = ({ children }) => {
         authSignUp,
         authLogIn,
         authLogOut,
-        signInWithGgl
+        signInWithGgl,
+        message
     };
     return <authContext.Provider value={values}>
         {children}

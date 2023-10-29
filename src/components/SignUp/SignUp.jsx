@@ -29,7 +29,7 @@ function SignUp() {
     return (
         <div className='LogIn'>
             <div className="formContainer">
-                <h2>Sign in here</h2>
+                <h2 >Sign in here</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="inputContainer">
                         <label htmlFor="User name or email">E-mail</label>
