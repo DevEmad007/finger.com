@@ -37,7 +37,12 @@ function LogIn() {
                 </form>
                 <div className="registerLinkContainer">
                     <span><b>Join Here</b></span>
-                    <Link style={{ textDecoration: 'underline' }} className='globleLinkStyle' to='/signup'>Sign Up</Link>
+                    <Link
+                        style={{ textDecoration: 'underline',fontWeight: 700 }}
+                        className='globleLinkStyle ' to='/signup'
+                    >
+                        Sign Up
+                    </Link>
                 </div>
                 <button className='gAuthBtn' type='button' onClick={handleGoogleAuth}><Google />     Log in With Google</button>
             </div>

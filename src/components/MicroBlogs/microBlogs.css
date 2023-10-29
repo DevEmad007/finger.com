@@ -38,7 +38,7 @@
 .personInfoContainer {
     display: flex;
     align-items: center;
-    margin: 10px;
+    margin: 5px 6px 10px 3px;
 }
 
 .personInfoContainer h5 {
@@ -47,6 +47,10 @@
 
 .personInfoContainer span {
     font-size: 11px;
+}
+
+.microBlog  .personInfoContainer > div {
+    margin-top: -3px ;
 }
 
 .postInfo {
@@ -74,32 +78,31 @@
 
 
 .blogDetails {
-    height: 100vh;
-    padding:8px 10px;
+    min-height: 100vh;
     background-color: var(--bg-two);
     color: var(--color);
+    padding: 14px;
 }
 
 .blogDetailsLayout {
-    background-color: var(--bg-one);
+    padding: 12px 8px; 
     max-width: 790px;
     position: relative;
-    min-height: 300px; 
-    border: 1px solid gray;
-    border-radius: 20px;
+    background-color: var(--bg-one);
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 25% 50% 25%;
+}
+
+.blogDetailsLayout > .personInfoContainer {
+    margin: 8px 0;
+}
+
+.blogDetailsLayout > .personInfoContainer > div {
+    margin-top: -3px ;
 }
 
 .blogDetailsLayout > .interactionContainer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    margin-top: auto;
 }
 
-.notification, .chat{
-    height: 100vh;
-    display: flex;
-     justify-content: center;
-    align-items: center;
-    text-transform: capitalize;
-}

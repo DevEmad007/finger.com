@@ -20,6 +20,9 @@ function MicroBlogs() {
                     strokeColor="grey"
                     strokeWidth="5"
                     animationDuration="0.75"
+                    position='absolute'
+                    top='44%'
+                    left='44%'
                     width="56"
                     visible={true}
                 />}

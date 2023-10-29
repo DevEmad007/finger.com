@@ -14,7 +14,7 @@ const EditProfile = () => {
             {gettingQueryData ? (<RotatingLines
                 strokeColor="grey"
                 strokeWidth="5"
-                animationDuration="0.75"
+                animationDuration="1"
                 position='absolute'
                 top='44%'
                 left='44%'
