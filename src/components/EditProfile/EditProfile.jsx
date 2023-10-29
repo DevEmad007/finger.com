@@ -10,7 +10,7 @@ const EditProfile = () => {
     const { gettingQueryData,queryData } = useQueryById(type,user?.uid);
 
     return (
-        <div>
+        <div className='editProfileContainer'>
             {gettingQueryData ? (<RotatingLines
                 strokeColor="grey"
                 strokeWidth="5"

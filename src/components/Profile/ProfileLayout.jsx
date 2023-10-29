@@ -18,7 +18,7 @@ function ProfileLayout({ profileData,uidAsParam }) {
                 </div>
                 <div className='profileDisplayInfoContainer'>
                     <h2>{profileData?.displayName}</h2>
-                    <p>{user?.email}</p>
+                    <p>{uidAsParam.profileID === user.uid && user?.email}</p>
                 </div>
                 <div className="profileEdit">
                     {
